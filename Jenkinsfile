@@ -14,12 +14,15 @@ pipeline {
             }
         }
 
+  
         stage('Install dependencies') {
             steps {
-            echo "Installing dependencies ..."
+                echo 'Installing dependencies ...'
                 sh 'npm install'
+             sh 'npm install --save-dev @types/express @types/multer'
             }
         }
+
 
         stage('Build project') {
             steps {
