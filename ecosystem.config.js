@@ -3,7 +3,7 @@ module.exports = {
     {
       name      : 'ecosystem',
       script    : 'dist/main.js', // Your main application entry file
-      instances : 'max', // Run as many instances as CPU cores (for Node.js clu>
+      instances : 1, // Run as many instances as CPU cores (for Node.js clu>
       exec_mode : 'fork',
       watch     : true, // Watch for file changes and auto-restart
       ignore_watch : ['node_modules', 'logs', 'public'], // Directories to igno>
