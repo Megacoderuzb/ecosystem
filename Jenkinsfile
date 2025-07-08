@@ -19,14 +19,14 @@ pipeline {
             steps {
                 echo 'Installing dependencies ...'
                 sh 'npm install'
-             sh 'npm install --save-dev @types/express @types/multer'
+                sh 'npm install --save-dev @types/express @types/multer'
             }
         }
 
 
         stage('Build project') {
             steps {
-            echo "Build stage is in process ..."
+                echo "Build stage is in process ..."
                 sh 'npm run build'
             }
         }

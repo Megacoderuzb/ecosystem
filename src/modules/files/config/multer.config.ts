@@ -1,6 +1,6 @@
 import { diskStorage } from 'multer';
 import { extname } from 'path';
-import { Request } from 'express';
+import { Express ,Request } from 'express';
 
 export const multerConfig = {
   storage: diskStorage({

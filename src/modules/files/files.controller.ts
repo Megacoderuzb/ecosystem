@@ -13,6 +13,7 @@ import { multerConfig } from './config/multer.config';
 import { Roles } from 'src/common/decorators/role.decorator';
 import { Role } from 'src/common/enums/role.enum';
 import { AuthGuard } from 'src/common/guards/auth.guards';
+import { Express } from 'express';
 
 @Controller('files')
 export class FilesController {
