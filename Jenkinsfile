@@ -9,12 +9,11 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-            echo "Checkout is in process ..."
+                echo "Checkout is in process ..."
                 git branch: 'main', url: 'https://github.com/Megacoderuzb/ecosystem.git'
             }
         }
 
-  
         stage('Install dependencies') {
             steps {
                 echo 'Installing dependencies ...'
@@ -22,7 +21,6 @@ pipeline {
                 sh 'npm install --save-dev @types/express @types/multer'
             }
         }
-
 
         stage('Build project') {
             steps {
@@ -42,14 +40,17 @@ pipeline {
                 '''
             }
         }
-
-}
-
     }
 
     post {
         always {
-            sh 'pm2 save'  // PM2 holatini saqlab qo'yish
+            echo 'Saving PM2 process list...'
+            sh '''
+                export NVM_DIR="$HOME/.nvm"
+                [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+                nvm use 22
+                pm2 save
+            '''
         }
     }
 }
