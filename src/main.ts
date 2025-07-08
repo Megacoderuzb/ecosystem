@@ -1,7 +1,8 @@
 // import xss from 'xss-clean';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { ValidationPipe } from '@nestjs/common';
+import { ValidationPipe } from '@nestjs/common';  
+import 'reflect-metadata';
 
 async function bootstrap() {
   const PORT = process.env.PORT ?? 3001;
