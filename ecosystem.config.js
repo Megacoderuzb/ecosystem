@@ -36,7 +36,7 @@ module.exports = {
       host : '138.128.241.134',
       ref  : 'origin/main',
       repo : 'git@github.com:Megacoderuzb/ecosystem.git',
-      path : '/var/www/starter',
+      path : '/var/www/ecosystem',
       'pre-setup': 'npm install --production',
       'post-setup': 'npm install && pm2 startOrRestart ecosystem.config.js --env production',
       'pre-deploy-local': '', // Commands to run on local machine before deploy>
