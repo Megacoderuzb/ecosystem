@@ -33,9 +33,7 @@ pipeline {
         stage('Start with PM2') {
             steps {
                 echo "Start with PM2"
-                sh '''
-                    pm2 startOrRestart ecosystem.config.js --env production
-                '''
+                sh 'pm2 startOrRestart ecosystem.config.js --env production'
             }
         }
     }
