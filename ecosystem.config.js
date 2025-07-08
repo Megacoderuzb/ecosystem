@@ -13,9 +13,11 @@ module.exports = {
       restart_delay: 3000, // Wait 3 seconds before restarting a crashed app
 
       env: {
-        NODE_ENV: 'development',
-        PORT: 3001 // Default port for development
-     },
+        NODE_ENV: 'production',
+        MONGO_URI: 'mongodb://localhost:27017/eco',
+        PORT: 3001,
+        JWT_SECRET: 'mySecret',
+      },
       env_production : {
         NODE_ENV: 'production',
         PORT: 3001,

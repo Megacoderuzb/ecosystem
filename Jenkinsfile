@@ -14,19 +14,20 @@ pipeline {
             }
         }
 
-        stage('Create .env file') {
-            steps {
-                echo "Creating .env file ..."
-                script {
-                    writeFile file: '.env', text: '''
-                        MONGO_URI=mongodb://localhost:27017/eco
-                        NODE_ENV=production
-                        JWT_SECRET=mysecret
-                        PORT=3001
-                    '''
-                }
-            }
+       stage('Create .env file') {
+    steps {
+        echo "Creating .env file ..."
+        script {
+            writeFile file: '.env', text: '''
+MONGO_URI=mongodb://localhost:27017/eco
+NODE_ENV=production
+PORT=3001
+JWT_SECRET=mySecret
+'''
         }
+    }
+}
+
 
         stage('Install dependencies') {
             steps {
