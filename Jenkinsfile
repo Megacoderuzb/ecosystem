@@ -32,12 +32,18 @@ pipeline {
         }
 
         stage('Start with PM2') {
-            steps {
-                echo "Start with PM2"
-                // sh 'pm2 startOrRestart ecosystem.config.js --env production'
-                sh '~/.nvm/versions/node/v22.17.0/bin/pm2 startOrRestart ecosystem.config.js --env production'
-            }
-        }
+          steps {
+            echo "Start with PM2"
+            sh '''
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            nvm use 22
+            pm2 startOrRestart ecosystem.config.js --env production
+            '''
+          }
+    }
+}
+
     }
 
     post {
